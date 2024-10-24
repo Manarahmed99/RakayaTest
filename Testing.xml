@@ -1,0 +1,96 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Demo Suite" verbose="1" parallel="tests">
+
+    <test name="us_0001 Verify navigation through header links on the Home Page">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.UI.us_0001.HomePageHeaderLinkTest" />
+            <class name="Testing.UI.us_0001.HomePageHeaderLogoTest" />
+        </classes>
+    </test>
+
+    <test name="us_0002 Verify navigation through footer links on the Home Page">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.UI.us_0002.HomePageButtonTest" />
+            <class name="Testing.UI.us_0002.HomePageFooterLinkTest" />
+        </classes>
+    </test>
+
+    <test name="us_0003 Verify navigation through the Rakaia Page using the side menu">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.UI.us_0003.RakaiaPageNavigateToMenuTest" />
+        </classes>
+    </test>
+
+    <test name="us_0004 Verify navigation to the Job Application through different methods">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.UI.us_0004.JobsPageTest" />
+        </classes>
+    </test>
+
+    <test name="us_0005 Verify form input validations and submission scenarios on the Job Application page">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.UI.us_0005.JobApplicationPageTest" />
+        </classes>
+    </test>
+
+    <test name="us_0006 Verify various form submission scenarios on the Contact Us page">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.UI.us_0006.ContactUsTest"/>
+        </classes>
+    </test>
+
+    <test name="us_0009 Verifying that the homepage loads without errors.">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.UI.us_0009.HomepageLoadsWithoutErrors"/>
+        </classes>
+    </test>
+
+    <test name="us_0009 Verify Homepage Renders Correctly on Chrome.">
+        <classes>
+            <class name="Testing.UI.us_0009.HomepageRenderingTests">
+                <parameter name="browser" value="chrome" />
+                <methods>
+                    <exclude name="testHomepageRendersCorrectlyOnChrome"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="us_0009 Verify Homepage Renders Correctly on Firefox">
+        <classes>
+            <class name="Testing.UI.us_0009.HomepageRenderingTests">
+                <parameter name="browser" value="firefox" />
+                <methods>
+                    <exclude name="testHomepageRendersCorrectlyOnFirefox"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="us_0009 Verify Homepage Renders Correctly on Edge">
+        <classes>
+            <class name="Testing.UI.us_0009.HomepageRenderingTests">
+                <parameter name="browser" value="edge" />
+                <methods>
+                    <exclude name="testHomepageRendersCorrectlyOnEdge"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="us_0001 Verify Get All Subjects API">
+        <parameter name="browser" value="chrome" />
+        <classes>
+            <class name="Testing.API.test.US_0001.VerifyGetAllSubjectsAPITest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -3,8 +3,12 @@ package Testing.UI.us_0002;
 import Pages.HomePage;
 import Testing.UI.UITestBase;
 import io.qameta.allure.Step;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class HomePageButtonTest extends UITestBase {
 
@@ -13,6 +17,7 @@ public class HomePageButtonTest extends UITestBase {
     public void testVerifyNavigationToRakayaPageByClickingButton() {
         HomePage homePage = new HomePage(driver, bot, wait);
         homePage.goTo().goToRakayaPage();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         Assert.assertEquals(driver.getCurrentUrl(), "https://rakaya.sa/rakaya");
     }
 

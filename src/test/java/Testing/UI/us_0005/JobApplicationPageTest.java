@@ -83,7 +83,7 @@ public void testSuccessfulFormSubmission() {
 
     jobApplicationPage.typeNameField("منار احمد عبدالله العبدلى");
     jobApplicationPage.typeEmailField("test@gmail.com");
-    jobApplicationPage.typePhoneField("556141799");
+    jobApplicationPage.typePhoneField("556141790");
     jobApplicationPage.selectQualification("بكالوريوس");
     jobApplicationPage.clickCitizenRadioButton();
     jobApplicationPage.clickFemaleRadioButton();
@@ -276,7 +276,7 @@ public void testSpecialCharactersInEmail() {
 
         jobApplicationPage.typeNameField("منار");
         jobApplicationPage.typeEmailField("test@gmail.com");
-        jobApplicationPage.typePhoneField("556141799");
+        jobApplicationPage.typePhoneField("556141790");
         jobApplicationPage.selectQualification("بكالوريوس");
         jobApplicationPage.clickCitizenRadioButton();
         jobApplicationPage.clickFemaleRadioButton();
@@ -305,10 +305,10 @@ public void testSpecialCharactersInEmail() {
     @Step("Check that entering a long full name shows the appropriate error message")
     public void testLongFullName() {
 
-        String longName = "منار احمد عبدالله العبدلى " + "أ" + "أ".repeat(6);
-        jobApplicationPage.typeNameField(longName);
+
+        jobApplicationPage.typeNameField("منار احمد عبدالله عبدالله العبدلى");
         jobApplicationPage.typeEmailField("test@gmail.com");
-        jobApplicationPage.typePhoneField("556141799");
+        jobApplicationPage.typePhoneField("556141790");
         jobApplicationPage.selectQualification("بكالوريوس");
         jobApplicationPage.clickCitizenRadioButton();
         jobApplicationPage.clickFemaleRadioButton();
@@ -348,11 +348,13 @@ public void testSpecialCharactersInEmail() {
         jobApplicationPage.typeInSelfDescription("اقوم باختبار صفحة الوظائف من اجل QA Challenge المقدم من قسم IT");
         jobApplicationPage.clickFullTimeRadioButton();
         jobApplicationPage.typeInSalaryExpectation("avc");
-        assertTrue(jobApplicationPage.isDisplayedErrorMsgSalary(), "الراتب المتوقع مطلوب");
+
         jobApplicationPage.selectExperience("1");
         jobApplicationPage.clickTwoToFourWeeksAvailabilityRadioButton();
         jobApplicationPage.uploadFiles("D://PDF//Manar.pdf","D://PDF//img1.png","");
         jobApplicationPage.clickSubmitButton();
+
+        assertTrue(jobApplicationPage.isDisplayedErrorMsgSalary(), "الراتب المتوقع مطلوب");
     }
 
     @Test(testName = "Test for Negative Salary Input")
