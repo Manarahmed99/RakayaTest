@@ -40,7 +40,7 @@ public class ContactUsTest extends UITestBase {
         contactUs = new ContactUsPage(driver, bot, wait);
         contactUs.enterName("منار أحمد العبدلي");
         contactUs.enterEmail("test@gmail.com");
-        contactUs.enterPhone("5561417988");
+        contactUs.enterPhone("556141790");
         contactUs.enterMessage("هذا اختبار لنموذج اتصل بنا.");
         contactUs.selectHelp("سؤال");
         contactUs.clickSubmitButton();
@@ -58,7 +58,7 @@ public class ContactUsTest extends UITestBase {
         contactUs = new ContactUsPage(driver, bot, wait);
         contactUs.enterName("منار أحمد العبدلي");
         contactUs.enterEmail("test@gmail.com");
-        contactUs.enterPhone("5561417988");
+        contactUs.enterPhone("556141790");
         contactUs.enterMessage("هذا اختبار لنموذج اتصل بنا.");
         contactUs.clickSubmitButton();
 

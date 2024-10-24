@@ -33,7 +33,7 @@ public class HomePage extends PageBase{
     private final  By partnerButton = By.xpath("//button[div[text()='كن شريك معنا']]");
 
     // Button "تعرف على ركايا البديعة"  - Locator
-    private final  By rakayaButton = By.xpath("//button[div[text()='تعرف على ركايا البديعة']]");
+   private final  By rakayaButton = By.xpath("//button[div[text()='تعرف على ركايا البديعة']]");
 
     // Button "اضغط للمزيد"  - Locator
     private final By jobsButton = By.xpath("//button[div[text()='اضغط للمزيد']]");
@@ -114,6 +114,11 @@ public class HomePage extends PageBase{
     @Step("Go to Jobs Page by clicking the 'اضغط للمزيد' button")
     public void goToJobsPage() {
         bot.click(jobsButton);
+
+    }
+
+    public boolean isJobsButtonDisplayed() {
+        return driver.findElement(jobsButton).isDisplayed();
     }
 
 
